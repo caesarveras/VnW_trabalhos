@@ -1,0 +1,33 @@
+h1 {
+  color: #F587DD;
+  font-family: arial;
+}
+
+h1:hover {
+  color: #f856d5;
+}
+
+body {
+  background: #BAF3F6;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+  font-family: arial;
+}
+
+img {
+  width: 20px;
+  border-radius: 30px;
+}
+
+footer {
+  display: flex;
+  background-color: #D9D9D9;
+  font-family: Inter;
+  color: #000000;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 1440px;
+  height: 67px;
+}/*# sourceMappingURL=style1.css.map */

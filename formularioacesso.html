@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="style1.css">
+        <title>Digimon Gaming</title>
+    </head>
+    <body>
+        <h1>Cadastro</h1><br>
+        <fieldset>
+            <legend>Formulário de Acesso</legend>
+            <form autocomplete="on"></form>
+            <label for="user">Usuário:</label><br>
+            <input id="user" type="text" required />
+            <br>
+            <label for="password">Senha:</label><br>
+            <input id="password" type="password"/>
+            <br>
+            <label for="password">Validar senha:</label><br>
+            <input id="password_repeat" type="password"/>
+            <p>
+            <label for="DigimonInicial">Digimon Inicial:</label></p>
+            
+            <input id="Guilmon" type="radio" name="Digimon" />
+            <label for="Guilmon">Guilmon</label>
+            <input id="Terriermon" type="radio" name="Digimon" disabled />
+            <label for="Terriermon">Terriermon</label>
+            <input id="Renamon" type="radio" name="Digimon" checked />
+            <label for="Renamon">Renamon</label>
+            <p>
+             <if select name="Guilmon" id="Guilmon" disabled="enabled">
+                <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/0c0f50af-c4f4-460c-a9aa-c5bed1286b35-profile_image-300x300.png" alt="guilmon" width: 20px; height: 20px><br></select>
+            <label>Itens:</label></p>
+            <input id="HP" type="checkbox" />
+            <label for="HP">Disquete para HP</label>
+            <input id="MP" type="checkbox" />
+            <label for="MP">Disquete para MP</label>
+            <p><button id="Enviar">Enviar</button></p>
+            
+
+
+        </fieldset>
+    </body>
+</html>
