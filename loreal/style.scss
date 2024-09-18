@@ -1,0 +1,135 @@
+        // CSS Reset 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kodchasan', 'Roboto', sans-serif; 
+            // Fonte personalizada do Google Fonts 
+            background-color: #ccc;
+            text-align: center;
+        }
+
+        //Cabeçalho
+        header {
+            background-color: #ccc;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        /// Seção principal
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+            gap: 20px;
+        }
+
+        .main-content .left, .main-content .right {
+            flex: 1;
+        }
+
+        .main-content .left img {
+            width: auto;
+            border-radius: 10px;
+        }
+
+        .main-content .right h2 {
+            font-size: 24px;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .main-content .right p {
+            color: #000;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /// Produtos favoritos
+        .favorites {
+            text-align: center;
+            margin: 40px 20px;
+        }
+
+        .favorites h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .favorites .products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .favorites .products img {
+            width: auto;
+            height: auto;
+        }
+
+        /// Responsividade
+        @media (max-width: 768px) {
+            .background {
+                display: none;
+                visibility: hidden;
+                opacity:0;
+                margin-left: 100px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                justify-content: center;
+            }
+
+            .main-content {
+                flex-direction: column;
+                margin: 10px;
+            }
+
+            .main-content .right h2 {
+                font-size: 20px;
+            }
+
+            .main-content .right p {
+                font-size: 14px;
+            }
+
+            .favorites .products {
+                //flex-direction: column;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                height: 470px;
+                justify-content: center;
+            }
+
+            .favorites .products img {
+                width: 80px;
+            }
+        }
