@@ -20,20 +20,32 @@
             border-bottom: 1px solid #ccc;
         }
 
+        .logo img{
+            max-width: 150px;
+            height: auto;
+        }
         nav {
             margin-top: 20px;
+            flex-grow: 1;
+            text-align: center;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block; 
+            // Centraliza horizontalmente
         }
 
         nav ul li {
             font-size: 14px;
             font-weight: bold;
+            display: inline; // Exibe os links na horizontal 
+            margin: 0 15px; // Espaçamento entre os links 
         }
 
         nav ul li a {
@@ -85,10 +97,42 @@
             display: flex;
             justify-content: center;
             gap: 20px;
+            
+        }
+
+        .favorites .left h3{
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
         }
 
         .favorites .products img {
             width: auto;
+            height: auto;
+        }
+
+
+         // Seção das Imagens 
+        .favorites .products .right {
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+        }
+
+         .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(150px, 1fr)); 
+            // Ajusta o número de colunas conforme o espaço disponível 
+            gap: 20px; 
+            //Espaçamento entre as imagens 
+            justify-items: center; 
+            // Centraliza as imagens horizontalmente
+            padding: 20px;
+        }
+
+        .grid-container img {
+            width: 100%;
+            max-width: 150px; // Define um limite para a largura das imagens */
             height: auto;
         }
 
@@ -100,7 +144,19 @@
                 opacity:0;
                 margin-left: 100px;
             }
-            
+            .grid-container {
+                grid-template-columns: repeat(2, minmax(120px, 120px)); 
+                // Ajusta o grid para telas menores 
+                justify-items: center;
+                gap:20px
+            }
+
+            .grid-container img {
+                max-width: 120px; 
+                // Ajusta o tamanho das imagens para telas pequenas 
+                justify-items: center;
+            }
+
             nav ul {
                 flex-direction: column;
                 gap: 10px;

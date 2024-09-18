@@ -17,20 +17,32 @@ header {
   border-bottom: 1px solid #ccc;
 }
 
+.logo img {
+  max-width: 150px;
+  height: auto;
+}
+
 nav {
   margin-top: 20px;
+  flex-grow: 1;
+  text-align: center;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
 }
 
 nav ul li {
   font-size: 14px;
   font-weight: bold;
+  display: inline;
+  margin: 0 15px;
 }
 
 nav ul li a {
@@ -82,8 +94,34 @@ nav ul li a {
   gap: 20px;
 }
 
+.favorites .left h3 {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
 .favorites .products img {
   width: auto;
+  height: auto;
+}
+
+.favorites .products .right {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
+
+.grid-container img {
+  width: 100%;
+  max-width: 150px;
   height: auto;
 }
 
@@ -93,6 +131,15 @@ nav ul li a {
     visibility: hidden;
     opacity: 0;
     margin-left: 100px;
+  }
+  .grid-container {
+    grid-template-columns: repeat(2, minmax(120px, 120px));
+    justify-items: center;
+    gap: 20px;
+  }
+  .grid-container img {
+    max-width: 120px;
+    justify-items: center;
   }
   nav ul {
     flex-direction: column;
