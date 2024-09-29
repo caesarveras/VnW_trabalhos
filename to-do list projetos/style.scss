@@ -1,0 +1,300 @@
+// Variáveis
+$primary-color: #5A3EBC;
+$secondary-color: #FF6584;
+$background-color: #F5F7FA;
+$text-color: #333;
+$border-color: #E2E2E2;
+$high-priority: #FF4D4F;
+$medium-priority: #FFA940;
+$low-priority: #1890FF;
+
+// Importando a fonte Roboto
+body {
+    font-family: 'Roboto', sans-serif;
+    color: $text-color;
+}
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Layout
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid $border-color;
+    z-index: 1000;
+    position: relative;
+
+    .header-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 24px;
+        cursor: pointer;
+        margin-right: 20px; // Adiciona espaço entre o botão e a logo
+
+        span {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: $text-color;
+            border-radius: 2px;
+        }
+    }
+
+    .logo {
+        img {
+            width: 50px;
+            height: 45px;
+        }
+    }
+
+    .search-bar {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid $border-color;
+        width: 300px;
+        margin-left: auto;
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 50px;
+            height: 45px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    }
+}
+
+// Sidebar escondida por padrão
+.sidebar {
+    background-color: $primary-color;
+    color: white;
+    width: 250px;
+    padding: 20px;
+    position: absolute;
+    left: -250px;
+    top: 60px; // Ajustado para não sobrepor o cabeçalho
+    height: calc(100% - 60px); // Para considerar a altura do cabeçalho
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+
+    &.active {
+        left: 0;
+    }
+
+    .menu {
+        ul {
+            list-style: none;
+            li {
+                margin-bottom: 20px;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 16px;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.content {
+    flex: 1;
+    background-color: $background-color;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+    margin-left: 0;
+
+    &.shifted {
+        margin-left: 250px;
+    }
+
+    .projects {
+        .projects-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+
+            h1 {
+                font-size: 24px;
+                color: $text-color;
+                font-weight: 700;
+            }
+
+            .new-project-btn {
+                background-color: $secondary-color;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 500;
+                user-select: active
+            }
+                .new-project-btn:active{
+                //aqui vem como você quer que ele fique quando for clicado
+                background-color: #c85069;
+             }
+        }
+
+        .projects-table {
+            width: 100%;
+            border-collapse: collapse;
+            color: $text-color;
+
+            thead {
+                th {
+                    padding: 10px;
+                    text-align: left;
+                    background-color: white;
+                    border-bottom: 2px solid $border-color;
+                    font-weight: 500;
+                    color: $text-color;
+                }
+            }
+
+            tbody {
+                tr {
+                    background-color: white;
+                    &:nth-child(even) {
+                        background-color: $background-color;
+                    }
+
+                    td {
+                        padding: 10px;
+                        border-bottom: 1px solid $border-color;
+                        font-weight: 400;
+
+                        &.priority {
+                            &.high {
+                                color: $high-priority;
+                            }
+
+                            &.medium {
+                                color: $medium-priority;
+                            }
+
+                            &.low {
+                                color: $low-priority;
+                            }
+                        }
+
+                        img {
+                            width: 30px;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// Estilos para os avatares dos participantes
+.participant-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+// Estilos para as prioridades
+.priority.high {
+    color: $high-priority;
+}
+
+.priority.medium {
+    color: $medium-priority;
+}
+
+.priority.low {
+    color: $low-priority;
+}
+
+/* Estilos para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 10px;
+}
+
+/* Estilos da tabela */
+.projects-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.projects-table th, .projects-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.projects-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Estilos para os avatares dos participantes */
+.participant-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+/* Estilos para as prioridades */
+.priority.high {
+    color: red;
+}
+
+.priority.medium {
+    color: orange;
+}
+
+.priority.low {
+    color: green;
+}

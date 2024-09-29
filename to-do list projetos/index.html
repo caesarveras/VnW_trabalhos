@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protask Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho com o botão de menu hambúrguer à esquerda da logo -->
+        <header class="header">
+            <div class="header-left">
+                <!-- Botão de menu hambúrguer -->
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="logo">
+                    <img src="sources/logo.png" alt="Compasso Logo" width="10" height="30">
+                </div>
+            </div>
+            <input type="text" id="search-bar" class="search-bar" placeholder="Pesquisar...">
+            <div class="profile">
+                <img src="sources/profile1.png" alt="Imagem de Perfil">
+                <span>Luana</span>
+            </div>
+        </header>
+
+        <!-- Menu lateral que vai aparecer/desaparecer -->
+        <aside class="sidebar">
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Projetos</a></li>
+                    <li><a href="#">Templates</a></li>
+                    <li><a href="#">Tarefas</a></li>
+                    <li><a href="#">Pessoas</a></li>
+                    <li><a href="#">Grupos</a></li>
+                    <li><a href="#">Arquivos</a></li>
+                    <li><a href="#">Pagamento</a></li>
+                    <li><a href="#">Tempo</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section class="projects">
+                <div class="projects-header">
+                    <h1>Todos os Projetos</h1>
+                    <!-- Botão para abrir o modal -->
+                    <button id="newProjectBtn" class="new-project-btn">+ Novo Projeto</button>
+
+                    <!-- Modal de criação de novo projeto -->
+                    <div id="newProjectModal" class="modal">
+                      <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Criar Novo Projeto:</h2><br>
+                        <form id="newProjectForm">
+                          <label for="projectName">Nome do Projeto:</label>
+                          <input type="text" id="projectName" name="projectName" required>
+                    
+                          <label for="projectIcon">Selecione o ícone:</label>
+                          <select id="projectIcon" name="projectIcon">
+                            <option value="📊"> 📊</option>
+                                    <option value="🎨">🎨 </option>
+                                    <option value="🛠">🛠</option>
+                                    <option value="📅">📅</option>
+                                </select><br>
+                                
+                                <label for="startDate">Data Inicial:</label>
+                                <input type="date" id="startDate" name="startDate" required>
+                    
+                                <label for="endDate">Data final:</label>
+                                <input type="date" id="endDate" name="endDate" required><br>
+                    
+                                <label for="status">Status:</label>
+                                <select id="status" name="status">
+                                    <option value="Active">Active</option>
+                                    <option value="Design">Design</option>
+                                    <option value="Inactive">Inactive</option>
+                                    <option value="Ready">Ready</option>
+                                </select>
+                    
+                                <label for="participants">Participantes (separar por vírgula):</label>
+                                <input type="text" id="participants" name="participants" required>
+                    
+                                <label for="priority">Priority:</label>
+                                <select id="priority" name="priority">
+                                    <option value="High">High</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Low">Low</option>
+                                </select>
+                    
+                                <button type="submit">Create Project</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <table class="projects-table">
+                    <thead>
+                        <tr>
+                            <th>Nome do Projeto</th>
+                            <th>Data de início</th>
+                            <th>Data fim</th>
+                            <th>Financiamento</th>
+                            <th>Status</th>
+                            <th>Participantes</th>
+                            <th>Prioridade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Reuniões de pesquisa</td>
+                            <td>16/07/2024</td>
+                            <td>24/10/2024</td>
+                            <td>$$$</td>
+                            <td>Design</td>
+                            <td><img src="sources/profileA.png" alt="Avatar"> <img src="sources/ProfileB.png" alt="Avatar"></td>
+                            <td class="priority high">High</td>
+                        </tr>
+                        <!-- Outros projetos -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="app.js">   </script>
+</body>
+</html>
+

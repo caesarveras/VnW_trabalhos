@@ -4,5 +4,14 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"cSpell.words": [
+			"barra",
+			"FOODJP",
+			"Início",
+			"Protask",
+			"Sobre"
+		],
+		"cSpell.language": "en,lorem"
+	}
 }

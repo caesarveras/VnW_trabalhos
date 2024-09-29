@@ -1,0 +1,252 @@
+body {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #E2E2E2;
+  z-index: 1000;
+  position: relative;
+}
+.header .header-left {
+  display: flex;
+  align-items: center;
+}
+.header .hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.header .hamburger-menu span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #333;
+  border-radius: 2px;
+}
+.header .logo img {
+  width: 50px;
+  height: 45px;
+}
+.header .search-bar {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #E2E2E2;
+  width: 300px;
+  margin-left: auto;
+}
+.header .profile {
+  display: flex;
+  align-items: center;
+}
+.header .profile img {
+  width: 50px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.sidebar {
+  background-color: #5A3EBC;
+  color: white;
+  width: 250px;
+  padding: 20px;
+  position: absolute;
+  left: -250px;
+  top: 60px;
+  height: calc(100% - 60px);
+  transition: left 0.3s ease-in-out;
+  z-index: 999;
+}
+.sidebar.active {
+  left: 0;
+}
+.sidebar .menu ul {
+  list-style: none;
+}
+.sidebar .menu ul li {
+  margin-bottom: 20px;
+}
+.sidebar .menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+.sidebar .menu ul li a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  flex: 1;
+  background-color: #F5F7FA;
+  padding: 20px;
+  transition: margin-left 0.3s ease-in-out;
+  margin-left: 0;
+}
+.content.shifted {
+  margin-left: 250px;
+}
+.content .projects .projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.content .projects .projects-header h1 {
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+.content .projects .projects-header .new-project-btn {
+  background-color: #FF6584;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  -webkit-user-select: active;
+     -moz-user-select: active;
+          user-select: active;
+}
+.content .projects .projects-header .new-project-btn:active {
+  background-color: #c85069;
+}
+.content .projects .projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #333;
+}
+.content .projects .projects-table thead th {
+  padding: 10px;
+  text-align: left;
+  background-color: white;
+  border-bottom: 2px solid #E2E2E2;
+  font-weight: 500;
+  color: #333;
+}
+.content .projects .projects-table tbody tr {
+  background-color: white;
+}
+.content .projects .projects-table tbody tr:nth-child(even) {
+  background-color: #F5F7FA;
+}
+.content .projects .projects-table tbody tr td {
+  padding: 10px;
+  border-bottom: 1px solid #E2E2E2;
+  font-weight: 400;
+}
+.content .projects .projects-table tbody tr td.priority.high {
+  color: #FF4D4F;
+}
+.content .projects .projects-table tbody tr td.priority.medium {
+  color: #FFA940;
+}
+.content .projects .projects-table tbody tr td.priority.low {
+  color: #1890FF;
+}
+.content .projects .projects-table tbody tr td img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.participant-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.priority.high {
+  color: #FF4D4F;
+}
+
+.priority.medium {
+  color: #FFA940;
+}
+
+.priority.low {
+  color: #1890FF;
+}
+
+/* Estilos para o modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  border-radius: 10px;
+}
+
+/* Estilos da tabela */
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.projects-table th, .projects-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.projects-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Estilos para os avatares dos participantes */
+.participant-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* Estilos para as prioridades */
+.priority.high {
+  color: red;
+}
+
+.priority.medium {
+  color: orange;
+}
+
+.priority.low {
+  color: green;
+}/*# sourceMappingURL=style.css.map */
